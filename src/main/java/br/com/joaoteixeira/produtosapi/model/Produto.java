@@ -22,6 +22,9 @@ public class Produto {
 	@Column(name = "preco")
 	private Double preco;
 
+	@Column(name = "categoria")
+	private String categoria;
+
 	public String getId() {
 		return id;
 	}
@@ -54,6 +57,14 @@ public class Produto {
 		this.preco = preco;
 	}
 
+	public String getCategoria() {
+		return categoria;
+	}
+
+	public void setCategoria(String categoria) {
+		this.categoria = categoria;
+	}
+
 	@Override
 	public String toString() {
 		return "Produto{" +
@@ -61,6 +72,7 @@ public class Produto {
 				", nome='" + nome + '\'' +
 				", descricao='" + descricao + '\'' +
 				", preco=" + preco +
+				", categoria='" + categoria + '\'' +
 				'}';
 	}
 }

@@ -29,8 +29,11 @@ public class ProdutoController {
     }
 
     @GetMapping
-    public List<Produto> informarTodosOsProdutos() {
-        List<Produto> produtos = produtoRepository.findAll();
+    public List<Produto> informarTodosOsProdutos(@RequestParam(value = "categoria", required = false) String categoria) {
+        List<Produto> produtos = categoria == null || categoria.isBlank()
+                ? produtoRepository.findAll()
+                : produtoRepository.findByCategoriaIgnoreCase(categoria.trim());
+
         System.out.println("Todos os produtos:");
         for (Produto produto : produtos) {
             System.out.println(produto);

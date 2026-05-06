@@ -11,3 +11,12 @@ spring:
     console:
       enabled: true
       path: /h2-console
+
+api:
+  security:
+    token: produtos-token-123
+
+server:
+  error:
+    include-stacktrace: never
+    include-message: never
